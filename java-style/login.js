@@ -1,25 +1,24 @@
 document
-      .getElementById('Add-money-btn')
-      .addEventListener('click', function (event) {
-        event.preventDefault();
+  .getElementById('Add-money-btn')
+  .addEventListener('click', function (event) {
+    event.preventDefault();
 
-        const pin = document.getElementById('pin').value;
-        console.log(pin);
+    const balance = document.getElementById('available-amount').innerText;
+    const convertBalance = parseFloat(balance);
+    const accountNum = document.getElementById('account-number').value;
+    const convertAccountNum = parseInt(accountNum);
 
-        const addAmount = document.getElementById('input-add-money').value;
-        const convertedAddNum = parseFloat(addAmount)
-       
+    const pin = document.getElementById('pin').value;
+    const convertPin = parseInt(pin);
 
-        const accountNum = document.getElementById('account-number').value;
+    const addAmount = document.getElementById('input-add-money').value;
+    const convertedAddNum = parseFloat(addAmount);
 
-        const balance = document.getElementById('available-amount').innerText;
-        const convertedBalance = parseInt(balance)
-        
-        if (accountNum === '12345678910' && pin === '1234') {
-          const sum = convertedAddNum + convertedBalance;
-          document.getElementById('available-amount').innerText = sum;
-          console.log(convertedAddNum);
-          console.log(convertedBalance)
 
-        }
-      });
+    if (convertAccountNum === '12345678910' || convertPin === 1234) {
+      const sum = convertedAddNum + convertBalance;
+      document.getElementById('available-amount').innerText = sum;
+    } else {
+      console.log('something went wrong');
+    }
+  });

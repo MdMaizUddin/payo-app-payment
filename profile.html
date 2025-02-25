@@ -9,21 +9,30 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="container mx-auto space-y-8">
-  <header class="">
+<body class="   space-y-8">
 
-    <div class="flex justify-between items-center border px-3 py-4">
-      <img class="w-11 md:w-16" src="./assets/Group.png" alt="">
-      <div>
-        <p class="font-bold text-2xl">$ <span id="available-amount">00</span></p>
-        <p>Available Balance</p>
+  <div class="md:mockup-phone">
+    <div class="md:camera"></div>
+    <div class="md:display">
+      <div class="md:artboard md:artboard-demo md:phone-1 space-y-5">
+
+  <header class="border-t border-b ">
+
+    <div class="md:container mx-auto flex justify-between items-center  px-3 py-4">
+      <div class="flex items-center">
+
+        <img class="w-11 md:w-16" src="./assets/Group.png" alt="">
+        <div>
+          <p class="font-bold text-2xl">$ <span id="available-amount">2000</span></p>
+          <p class="text-gray-500">Available Balance</p>
+        </div>
       </div>
       <button id="log-out-btn" class="btn">log out</button>
     </div>
   </header>
-  <main class="px-3 space-y-5">
-    <section>
-      <h2 class="font-bold text-xl">🔥 Welcome to Payooo!</h2>
+  <main class="px-3 space-y-5 container mx-auto flex flex-col justify-center">
+    <section class="space-y-3">
+      <h3 class="font-bold text-xl">🔥Welcome to Payooo!</h3>
       <p class="w-4/5 text-slate-500">
         Enjoy easy and convenient financial services with us. Cashout charge is low and
       </p>
@@ -55,7 +64,7 @@
         <img class="mx-auto" src="./assets/wallet1.png" alt="">
         <p class="text-center ">Pay Bill</p>
       </div>
-      <div id="Transactions" class=" border flex items-center justify-center   rounded-xl space-y-1 cursor-pointer">
+      <div id="Transactions" class=" border flex items-center justify-center  p-5   rounded-xl space-y-1 cursor-pointer">
         <div>
           <img class="mx-auto" src="./assets/transaction1.png" alt="">
           <p class="text-center ">Transactions</p>
@@ -64,15 +73,18 @@
     </section>
 
 
+    <!-- add money response -->
     <section id="add-money-section" class="hidden">
       <div class="">
-        <div class="hero-content flex-col lg:flex-row-reverse">
+        <div class="hero-content flex-col ">
           <h4 class="text-3xl font-semibold">Add Money</h4>
           <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form class="card-body">
               <div class="form-control">
-                <select class="border rounded-lg py-2 px-1" name="" >
-                  <option value="nogot">Nogot</option>
+                <label class="pb-1" for="select">selet to pay</label>
+                <select id="select" class="border rounded-lg py-2 px-1" name="select" >
+                  <option value="nogot">None</option>
+                  <option value="bikash">nogod</option>
                   <option value="bikash">bikash</option>
                   <option value="bank">bank</option>
                 </select>
@@ -81,7 +93,7 @@
                 <label class="label">
                   <span class="label-text">Bank Account Number</span>
                 </label>
-                <input value="12345678910" id="account-number" type="email" placeholder="Enter 11 digit account number" class="input input-bordered"  />
+                <input value="12345678910" id="account-number" type="number" placeholder="Enter 11 digit account number" class="input input-bordered"  />
               </div>
               <div class="form-control">
                 <label class="label">
@@ -94,7 +106,7 @@
                 <label class="label">
                   <span class="label-text">Pin Number</span>
                 </label>
-                <input id="pin" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered"  />
+                <input value="1234" id="pin" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered"  />
               </div>
               <div class="form-control mt-6">
                 <button id="Add-money-btn" class="btn btn-primary">Add Money</button>
@@ -106,25 +118,66 @@
     </section>
 
 
-        <section id="cash-out-section" class="hidden">
+    <!-- cash out response -->
+        <!-- <section id="cash-out-section" class="hidden">
           <div class="">
-            <div class="hero-content flex-col lg:flex-row-reverse">
+            <div class="hero-content flex-col ">
               <h4 class="text-3xl font-semibold">Cash Out</h4>
               <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <form class="card-body">
  
                   <div class="form-control">
                     <label class="label">
-                      <span class="label-text">Bank Account Number</span>
+                      <span class="label-text">Agent Number 
+                      </span>
                     </label>
-                    <input value="12345678910" id="account-number" type="email" placeholder="Enter 11 digit account number"
-                      class="input input-bordered" />
+                    <input value="12345678910" type="number" placeholder="Enter 11 digit account number"
+                      class=" account-number input input-bordered" />
                   </div>
                   <div class="form-control">
                     <label class="label">
-                      <span class="label-text">Amount to Add</span>
+                      <span class="label-text">Amount</span>
                     </label>
-                    <input id="input-add-money" type="number" placeholder="Add Amount to withdraw"
+                    <input id="input-withdraw-money" type="number" placeholder="Add Amount to withdraw"
+                      class="input input-bordered" />
+                  </div>
+        
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Pin</span>
+                    </label>
+                    <input id="" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered" />
+                  </div>
+                  <div class="form-control mt-6">
+                    <button id="cash-out-btn" class="btn btn-primary">Add Money</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section> -->
+
+
+        <!-- Transfer Money response
+        <section id="Transfer-money-section" class="hidden">
+          <div class="">
+            <div class="hero-content flex-col">
+              <h4 class="text-3xl font-semibold">Transfer Money</h4>
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+        
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">user Account Number</span>
+                    </label>
+                    <input value="12345678910" type="number" placeholder="Enter 11 digit account number"
+                      class=" account-number input input-bordered" />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Amount</span>
+                    </label>
+                    <input id="input-add-money" type="number" placeholder="Enter amount to transfer"
                       class="input input-bordered" />
                   </div>
         
@@ -132,7 +185,85 @@
                     <label class="label">
                       <span class="label-text">Pin Number</span>
                     </label>
-                    <input id="pin" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered" />
+                    <input id="" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered" />
+                  </div>
+                  <div class="form-control mt-6">
+                    <button id="transfer-money-btn" class="btn btn-primary">Add Money</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+       Get Bonus response 
+        <section id="get-bonus-section" class="hidden">
+          <div class="">
+            <div class="hero-content flex-col ">
+              <h4 class="text-3xl font-semibold">Get Bonus</h4>
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+        
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Enter Bonus Coupon</span>
+                    </label>
+                    <input value=""  type="email" placeholder="Enter Your Coupon"
+                      class=" account-number input input-bordered" />
+                  </div>
+
+        
+
+                  <div class="form-control mt-6">
+                    <button id="Add-money-btn" class="btn btn-primary">Add Money</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        Pay bill response
+        <section id="pay-bill-section" class="hidden">
+          <div class="">
+            <div class="hero-content flex-col ">
+              <h4 class="text-3xl font-semibold">Pay Bill</h4>
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+                                <div class="form-control">
+                                  <label class="pb-1" for="select">selet to pay</label>
+                                  <select id="select" class="border rounded-lg py-2 px-1" name="select">
+                                    <option value="nogot">None</option>
+                                    <option value="bikash">nogod</option>
+                                    <option value="bikash">bikash</option>
+                                    <option value="bank">bank</option>
+                                  </select>
+                                </div>
+        
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Biller Account Number</span>
+                    </label>
+                    <input value="12345678910" id="account-number" type="email" placeholder="Enter account number"
+                      class="input input-bordered" />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Amount to Pay</span>
+                    </label>
+                    <input id="input-add-money" type="number" placeholder="Add Amount to pay"
+                      class=" account-number input input-bordered" />
+                  </div>
+        
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Pin Number</span>
+                    </label>
+                    <input id="" type="password" placeholder="Enter 4 digit pin number" class="input input-bordered" />
                   </div>
                   <div class="form-control mt-6">
                     <button id="Add-money-btn" class="btn btn-primary">Add Money</button>
@@ -143,15 +274,30 @@
           </div>
         </section>
 
+
+        Transactions response
+        <section id="transactions-section" class="hidden">
+          <div class="">
+            <div class="hero-content flex-col ">
+              <h4 class="text-3xl font-semibold">Transaction History</h4>
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+      
+              </div>
+            </div>
+          </div>
+        </section> -->
+
   </main>
-<script>
-  document.getElementById('log-out-btn').addEventListener('click', function () {
-     window.location.href = 'index.html';
-    })
-</script>
-  <!-- <script src="java-style/log-out.js"></script> -->
+        
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="java-style/log-out.js"></script>
   <script src="java-style/toggle.js"></script>
   <script src="java-style/login.js"></script>
 </body>
-
 </html>
