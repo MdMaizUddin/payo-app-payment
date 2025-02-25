@@ -11,9 +11,10 @@ document
     const pin = document.getElementById('pin').value;
     const convertPin = parseInt(pin);
 
-    const addAmount = document.getElementById('input-add-money').value;
-    const convertedAddNum = parseFloat(addAmount);
+    const addAmount = document.getElementById('input-add-money');
+    const convertedAddNum = parseFloat(addAmount.value);
 
+    addAmount.value = '';
 
     if (convertAccountNum === '12345678910' || convertPin === 1234) {
       const sum = convertedAddNum + convertBalance;
