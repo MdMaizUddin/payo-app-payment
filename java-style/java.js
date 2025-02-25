@@ -1,7 +1,7 @@
 document.getElementById('login-btn').addEventListener('click', function (e) {
   e.preventDefault()
   const email = document.getElementById('email-input');
-  const newEmail = email.value
+  const newEmail = email.value.toLowerCase()
   const pass = document.getElementById('password-input');
   const newPass = pass.value
   const convertedNewPass = parseInt(newPass)
